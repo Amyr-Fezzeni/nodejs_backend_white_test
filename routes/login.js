@@ -1,7 +1,7 @@
 const router = require('express').Router();
 const {User, validation_user,validation_user_login} = require('../models/user');
 
-
+// create new account
 router.post('/signup', async (req,res)=>{
     let result_valid= validation_user.validate(req.body);
     if(result_valid.error)
@@ -18,7 +18,7 @@ router.post('/signup', async (req,res)=>{
     }
     
 });
-
+// connect 
 router.post('/signin', async (req,res)=>{
     
     let result_valid= validation_user_login.validate(req.body);
